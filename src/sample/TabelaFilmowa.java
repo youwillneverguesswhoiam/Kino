@@ -21,6 +21,7 @@ public class TabelaFilmowa implements HierarchicalController<MainController> {
     public TextField czas;
     public TextField limit;
     public TableView<Film> tabelka;
+    private MainController parentController;
 
     public void dodaj(ActionEvent actionEvent) {
         Film film = new Film();
@@ -29,7 +30,7 @@ public class TabelaFilmowa implements HierarchicalController<MainController> {
         film.setCzas(czas.getText());
         film.setLimit(limit.getText());
         tabelka.getItems().add(film);
-        private MainController parentController;
+
     }
 
     public void setParentController(MainController parentController) {
@@ -40,7 +41,7 @@ public class TabelaFilmowa implements HierarchicalController<MainController> {
 
     public void usunZmiany() {
         tabelka.getItems().clear();
-        tabelka.getItems().addAll(parentController.getDataContainer().getStudents());
+        tabelka.getItems().addAll(parentController.getDataContainer().getFilmy());
     }
 
     public MainController getParentController() {
@@ -49,14 +50,15 @@ public class TabelaFilmowa implements HierarchicalController<MainController> {
 
     public void initialize() {
         for (TableColumn<Film, ?> studentTableColumn : tabelka.getColumns()) {
-            if ("imie".equals(studentTableColumn.getId())) {
-                studentTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-            } else if ("nazwisko".equals(studentTableColumn.getId())) {
-                studentTableColumn.setCellValueFactory(new PropertyValueFactory<>("surname"));
-            } else if ("pesel".equals(studentTableColumn.getId())) {
-                studentTableColumn.setCellValueFactory(new PropertyValueFactory<>("pesel"));
-            } else if ("indeks".equals(studentTableColumn.getId())) {
-                studentTableColumn.setCellValueFactory(new PropertyValueFactory<>("idx"));
+            if ("nnazwa".equals(studentTableColumn.getId())) {
+
+                studentTableColumn.setCellValueFactory(new PropertyValueFactory<>("nazwa"));
+            } else if ("opis".equals(studentTableColumn.getId())) {
+                studentTableColumn.setCellValueFactory(new PropertyValueFactory<>("opis"));
+            } else if ("czas".equals(studentTableColumn.getId())) {
+                studentTableColumn.setCellValueFactory(new PropertyValueFactory<>("czas"));
+            } else if ("limit".equals(studentTableColumn.getId())) {
+                studentTableColumn.setCellValueFactory(new PropertyValueFactory<>("limit"));
             }
         }
 

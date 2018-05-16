@@ -22,7 +22,7 @@ public class MainController implements HierarchicalController<MainController> {
     }
 
     public void daneOsobowe(ActionEvent actionEvent) {
-        loadIntoPane("daneOsobowe.fxml");
+        loadIntoPane("film.fxml");
     }
 
     private void loadIntoPane(String fxml) {
@@ -38,11 +38,7 @@ public class MainController implements HierarchicalController<MainController> {
         }
     }
 
-    public void oceny(ActionEvent actionEvent) {
-        loadIntoPane("oceny.fxml");
-    }
-
-    @Override
+        @Override
     public MainController getParentController() {
         return this;
     }
@@ -51,4 +47,11 @@ public class MainController implements HierarchicalController<MainController> {
     public void setParentController(MainController parent) {
 
     }
+    public void tabelafilmowa(ActionEvent actionEvent) {
+        loadIntoPane("film.fxml");
+    }
+    public void sala(ActionEvent actionEvent) {
+        loadIntoPane("sala.fxml");
+    }
+
 }

@@ -12,7 +12,26 @@ public class Film {
     public String opis;
     public String czas;
     public String limit;
+    public String kiedy;
+
+    public String getKiedy() {
+        return kiedy;
+    }
+
+    public String getSala() {
+        return sala;
+    }
+
+    public String sala;
     //public cośtam obrazek;
+
+    public void setKiedy(String kiedy) {
+        this.kiedy = kiedy;
+    }
+
+    public void setSala(String sala) {
+        this.sala = sala;
+    }
 
     public String getNazwa() {
 
